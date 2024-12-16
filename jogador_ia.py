@@ -48,13 +48,13 @@ class JogadorIA(Jogador):
     
     def check_R2(self):
         """Se houver uma jogada que crie duas sequências de duas marcações, use-a."""
-        if self.matriz[1][0] == self.matriz[0][1] and self.matriz[0][0] == Tabuleiro.DESCONHECIDO:
+        if self.matriz[1][0] == self.matriz[0][1] != Tabuleiro.DESCONHECIDO and self.matriz[0][0] == Tabuleiro.DESCONHECIDO:
             return (0, 0)
-        elif self.matriz[0][1] == self.matriz[1][2] and self.matriz[0][2] == Tabuleiro.DESCONHECIDO:
+        elif self.matriz[0][1] == self.matriz[1][2] != Tabuleiro.DESCONHECIDO and self.matriz[0][2] == Tabuleiro.DESCONHECIDO:
             return (0, 2)
-        elif self.matriz[1][2] == self.matriz[2][1] and self.matriz[2][2] == Tabuleiro.DESCONHECIDO:
+        elif self.matriz[1][2] == self.matriz[2][1] != Tabuleiro.DESCONHECIDO and self.matriz[2][2] == Tabuleiro.DESCONHECIDO:
             return (2, 2)
-        elif self.matriz[2][1] == self.matriz[1][0] and self.matriz[2][0] == Tabuleiro.DESCONHECIDO:
+        elif self.matriz[2][1] == self.matriz[1][0] != Tabuleiro.DESCONHECIDO and self.matriz[2][0] == Tabuleiro.DESCONHECIDO:
             return (2, 0)
         return None
     
